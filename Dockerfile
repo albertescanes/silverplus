@@ -1,4 +1,4 @@
-FROM quay.io/fedora-ostree-desktops/silverblue:rawhide@sha256:673c413ad6f25e83917cb0dcb9cc397fec50469818598d052f941046e0d5ce45
+FROM quay.io/fedora-ostree-desktops/silverblue:rawhide@sha256:b097d5c9df75f0aa9ef34a97aba48d5794e5e53b71130e8a66068dbcb2e967fd
 
 #COPY --chmod=0644 rootfs/ /
 
