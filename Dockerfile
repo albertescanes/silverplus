@@ -1,25 +1,6 @@
 FROM quay.io/fedora-ostree-desktops/silverblue:rawhide@sha256:8e50f9939dfd148492e691455850ba51275b233822b429daecc9c63e9c6b908e
 
-#COPY --chmod=0644 rootfs/ /
+COPY run.sh /tmp/run.sh
 
-RUN dnf config-manager setopt fedora-cisco-openh264.enabled=1 && \
-    dnf -y install \
-        https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
-        https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm \
-        fastfetch \
-        gnome-console \
-        steam-devices \
-        ffmpegthumbnailer && \
-    dnf -y swap \
-        ffmpeg-free ffmpeg --allowerasing && \
-    dnf -y remove \
-        gnome-shell-extension-apps-menu \
-        gnome-shell-extension-launch-new-instance \
-        gnome-shell-extension-places-menu \
-        gnome-shell-extension-window-list \
-        gnome-shell-extension-background-logo \
-        firefox-langpacks \
-        firefox && \
-    dnf -y clean all
-
-RUN bootc container lint
+RUN /tmp/run.sh && \
+    bootc container lint
