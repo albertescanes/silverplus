@@ -2,5 +2,5 @@ FROM quay.io/fedora-ostree-desktops/silverblue:rawhide@sha256:8e50f9939dfd148492
 
 COPY --chmod=0755 run.sh /tmp/run.sh
 
-RUN /tmp/run.sh && \
-    bootc container lint
+RUN /tmp/run.sh
+RUN bootc container lint
