@@ -1,4 +1,4 @@
-FROM quay.io/fedora-ostree-desktops/silverblue:rawhide@sha256:8e50f9939dfd148492e691455850ba51275b233822b429daecc9c63e9c6b908e
+FROM quay.io/fedora-ostree-desktops/silverblue:rawhide@sha256:1f70b4cf86c53c03405bbb1a4c141e3781df465b23eb52be8286647467223b30
 
 COPY --chmod=0755 run.sh /tmp/run.sh
 
